@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 
 const FinishOrder = () => {
+  const location = useLocation();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (location.state === undefined) {
+      history.push("/");
+    }
+  });
+
   return (
     <div className="home">
       <h2>Resumo do pedido</h2>

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import "./styles.css";
 
 const Home = () => {
   const [selectedFlavor, setSelectedFlavor] = useState<string>("");
   const [selectedSize, setSelectedSize] = useState<string>("");
+
+  const history = useHistory();
 
   function handleSelectFlavor(flavor: string) {
     if (flavor === selectedFlavor) {
@@ -20,6 +23,17 @@ const Home = () => {
     } else {
       setSelectedSize(size);
     }
+  }
+
+  function handleSubmit() {
+    if (selectedFlavor === "" || selectedSize === "") {
+      return alert("É necessário selecionar um sabor e um tamanho!");
+    }
+
+    return history.push("/customize", {
+      flavor: selectedFlavor,
+      size: selectedSize,
+    });
   }
 
   return (
@@ -70,9 +84,7 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <button onClick={() => console.log(`${selectedFlavor}, ${selectedSize}`)}>
-        Avançar
-      </button>
+      <button onClick={handleSubmit}>Avançar</button>
     </div>
   );
 };
