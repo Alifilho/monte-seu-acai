@@ -4,35 +4,35 @@ import { useHistory } from "react-router-dom";
 import "./styles.css";
 
 const Home = () => {
-  const [selectedFlavor, setSelectedFlavor] = useState<string>("");
-  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [flavor, setFlavor] = useState<string>("");
+  const [size, setSize] = useState<string>("");
 
   const history = useHistory();
 
-  function handleSelectFlavor(flavor: string) {
-    if (flavor === selectedFlavor) {
-      setSelectedFlavor("");
+  function handleSelectFlavor(selectedFlavor: string) {
+    if (selectedFlavor === flavor) {
+      setFlavor("");
     } else {
-      setSelectedFlavor(flavor);
+      setFlavor(selectedFlavor);
     }
   }
 
-  function handleSelectSize(size: string) {
+  function handleSelectSize(selectedSize: string) {
     if (size === selectedSize) {
-      setSelectedSize("");
+      setSize("");
     } else {
-      setSelectedSize(size);
+      setSize(selectedSize);
     }
   }
 
   function handleSubmit() {
-    if (selectedFlavor === "" || selectedSize === "") {
+    if (flavor === "" || size === "") {
       return alert("É necessário selecionar um sabor e um tamanho!");
     }
 
     return history.push("/customize", {
-      flavor: selectedFlavor,
-      size: selectedSize,
+      flavor,
+      size,
     });
   }
 
@@ -43,19 +43,19 @@ const Home = () => {
         <div className="flavor-block">
           <h4>SABOR:</h4>
           <button
-            className={selectedFlavor === "strawberry" ? "selected" : ""}
-            onClick={() => handleSelectFlavor("strawberry")}
+            className={flavor === "Morango" ? "selected" : ""}
+            onClick={() => handleSelectFlavor("Morango")}
           >
             Morango
           </button>
           <button
-            className={selectedFlavor === "banana" ? "selected" : ""}
-            onClick={() => handleSelectFlavor("banana")}
+            className={flavor === "Banana" ? "selected" : ""}
+            onClick={() => handleSelectFlavor("Banana")}
           >
             Banana
           </button>
           <button
-            className={selectedFlavor === "kiwi" ? "selected" : ""}
+            className={flavor === "Kiwi" ? "selected" : ""}
             onClick={() => handleSelectFlavor("kiwi")}
           >
             Kiwi
@@ -65,20 +65,20 @@ const Home = () => {
         <div className="size-block">
           <h4>TAMANHO:</h4>
           <button
-            className={selectedSize === "small" ? "selected" : ""}
-            onClick={() => handleSelectSize("small")}
+            className={size === "Pequeno (300ml)" ? "selected" : ""}
+            onClick={() => handleSelectSize("Pequeno (300ml)")}
           >
             Pequeno (300ml)
           </button>
           <button
-            className={selectedSize === "medium" ? "selected" : ""}
-            onClick={() => handleSelectSize("medium")}
+            className={size === "Médio (500ml)" ? "selected" : ""}
+            onClick={() => handleSelectSize("Médio (500ml)")}
           >
             Médio (500ml)
           </button>
           <button
-            className={selectedSize === "large" ? "selected" : ""}
-            onClick={() => handleSelectSize("large")}
+            className={size === "Grande (700ml)" ? "selected" : ""}
+            onClick={() => handleSelectSize("Grande (700ml)")}
           >
             Grande (700ml)
           </button>
