@@ -7,17 +7,19 @@ import "./styles.css";
 export interface IHistoryParams extends Location {
   flavor: string;
   size: string;
+  customizations: ICustomizations[];
+  waitTime: number;
+  sizeCost: number;
+  finalValue: number;
 }
 
-interface ICustomizations {
+export interface ICustomizations {
   name: string;
   value: number;
 }
 
 const Customize = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
-
-  const [customizations, setCustomizations] = useState<ICustomizations[]>([]);
 
   const location = useLocation<IHistoryParams>();
   const history = useHistory();
@@ -46,27 +48,19 @@ const Customize = () => {
     let sizeCost = 0;
     let finalValue = 0;
 
+    let auxArray: ICustomizations[] = [];
     selectedItems.forEach((item) => {
-      switch (item) {
-        case "Granola":
-          setCustomizations((list) => {
-            list.push({ name: item, value: 0 });
-            return list;
-          });
-          console.log(customizations);
-          finalValue += 3;
-          break;
-        case "Paçoca":
-          //setCustomizations([...customizations, { name: item, value: 3 }]);
-          finalValue += 3;
-          break;
-        case "Leite ninho":
-          //setCustomizations([...customizations, { name: item, value: 3 }]);
-          finalValue += 3;
-          break;
-        default:
-          alert("Error");
-          break;
+      if (item === "Granola") {
+        finalValue += 0;
+        return auxArray.push({ name: item, value: 0 });
+      }
+      if (item === "Paçoca") {
+        finalValue += 3;
+        return auxArray.push({ name: item, value: 3 });
+      }
+      if (item === "Leite ninho") {
+        finalValue += 3;
+        return auxArray.push({ name: item, value: 3 });
       }
     });
 
@@ -95,7 +89,7 @@ const Customize = () => {
     return history.push("/finish-order", {
       flavor: location.state.flavor,
       size: location.state.size,
-      customizations,
+      customizations: auxArray,
       waitTime,
       sizeCost,
       finalValue,
