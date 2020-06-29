@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 
-import { IHistoryParams, ICustomizations } from "../Customize";
+import Customizations from "../../@types/customizations";
+import HistoryParams from "../../@types/historyParams";
 
 import "./styles.css";
 
 const FinishOrder = () => {
   const [flavor, setFlavor] = useState("");
   const [size, setSize] = useState("");
-  const [customizations, setCustomizations] = useState<ICustomizations[]>([]);
+  const [customizations, setCustomizations] = useState<Customizations[]>([]);
   const [waitTime, setWaitTime] = useState(0);
   const [sizeCost, setSizeCost] = useState(0);
   const [finalValue, setFinalValue] = useState(0);
 
   const history = useHistory();
-  const location = useLocation<IHistoryParams>();
+  const location = useLocation<HistoryParams>();
 
   useEffect(() => {
     if (location.state === undefined) {
@@ -36,7 +37,6 @@ const FinishOrder = () => {
     location.state.sizeCost,
     location.state.finalValue,
     location.state.customizations,
-    customizations,
   ]);
 
   return (
@@ -47,7 +47,12 @@ const FinishOrder = () => {
         <div className="subtitle">TAMANHO:</div>
         <div className="size-span">
           <span>- {size}</span>
-          <span className="left-span">R$ {sizeCost}</span>
+          <span className="left-span">
+            {Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(sizeCost)}
+          </span>
         </div>
       </div>
       <div className="info-block">
@@ -63,12 +68,23 @@ const FinishOrder = () => {
           {customizations.map((item) => (
             <li key={item.name}>
               <span>- {item.name}</span>
-              <span className="left-span">R$: {item.value}</span>
+              <span className="left-span">
+                {Intl.NumberFormat("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(item.value)}
+              </span>
             </li>
           ))}
         </div>
         <div className="final-info">
-          <div>Valor total: R$ {finalValue}</div>
+          <div>
+            Valor total:{" "}
+            {Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(finalValue)}
+          </div>
           <div>Tempo de preparo: {waitTime}min</div>
         </div>
       </div>
@@ -81,4 +97,5 @@ const FinishOrder = () => {
     </div>
   );
 };
+
 export default FinishOrder;

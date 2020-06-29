@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
-import { Location } from "history";
+
+import Customizations from "../../@types/customizations";
+import HistoryParams from "../../@types/historyParams";
 
 import "./styles.css";
-
-export interface IHistoryParams extends Location {
-  flavor: string;
-  size: string;
-  customizations: ICustomizations[];
-  waitTime: number;
-  sizeCost: number;
-  finalValue: number;
-}
-
-export interface ICustomizations {
-  name: string;
-  value: number;
-}
 
 const Customize = () => {
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
-  const location = useLocation<IHistoryParams>();
+  const location = useLocation<HistoryParams>();
   const history = useHistory();
 
   useEffect(() => {
@@ -48,7 +36,7 @@ const Customize = () => {
     let sizeCost = 0;
     let finalValue = 0;
 
-    let auxArray: ICustomizations[] = [];
+    let auxArray: Customizations[] = [];
     selectedItems.forEach((item) => {
       if (item === "Granola") {
         finalValue += 0;
