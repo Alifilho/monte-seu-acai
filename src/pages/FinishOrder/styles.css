@@ -8,95 +8,19 @@ body {
   min-height: 100%;
 }
 
-.home {
-  background-color: #fff;
-  width: 600px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 10px 1px;
-  padding: 24px;
-}
-
-.title {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #4a148c;
-  font-weight: 700;
-  text-decoration: none solid rgb(74, 20, 140);
-  text-align: center;
-  display: block;
-  margin-bottom: 1.5rem;
-  font-size: 22px;
-}
-
-.options-block {
-  font-size: 16px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-decoration: none solid rgba(0, 0, 0, 0.4);
-  text-align: center;
-  padding-bottom: 24px;
-}
-
-.item-block {
-  padding: 16px 0px 16px 0px;
-}
-
 .subtitle {
-  text-align: left;
-  margin-bottom: 1rem;
-  color: #4a148c;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 700;
   font-size: 16px;
-  text-transform: uppercase;
-}
-
-.item-block button {
-  cursor: pointer;
-  padding: 12px;
-  height: 46px;
-  border-radius: 4px;
-  width: 180px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  background-color: #fff;
-}
-
-.buttons {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .end-button {
   text-decoration: none;
-  cursor: pointer;
-  color: #4a148c;
   height: 40px;
-  border: 2px solid #4a148c;
   padding: 10px 6px 10px 6px;
-  border-radius: 4px;
   width: auto;
-  height: 40px;
-  text-align: center;
-  transition: all 1s ease 0s;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  background-color: #fff;
 }
 
-.end-button:hover {
-  background-color: #4a148c;
-  color: #fff;
-}
-
-.footer-block {
-  text-align: right;
-}
-
-.size-span {
+.content-span {
   color: #4a148c;
   padding: 0px 20px 0px 20px;
   font-family: Avenir, Helvetica, Arial, sans-serif;

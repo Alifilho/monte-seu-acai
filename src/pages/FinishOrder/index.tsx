@@ -23,24 +23,18 @@ const FinishOrder = () => {
     if (location.state === undefined) {
       return history.push("/");
     }
+    return setStates();
   });
 
   //Add the order data to component state
-  useEffect(() => {
+  function setStates() {
     setFlavor(location.state.flavor);
     setSize(location.state.size);
     setWaitTime(location.state.waitTime);
     setSizeCost(location.state.sizeCost);
     setFinalValue(location.state.finalValue);
     setCustomizations(location.state.customizations);
-  }, [
-    location.state.flavor,
-    location.state.size,
-    location.state.waitTime,
-    location.state.sizeCost,
-    location.state.finalValue,
-    location.state.customizations,
-  ]);
+  }
 
   return (
     <div className="home">
@@ -48,7 +42,7 @@ const FinishOrder = () => {
 
       <div className="info-block">
         <div className="subtitle">TAMANHO:</div>
-        <div className="size-span">
+        <div className="content-span">
           <span>- {size}</span>
           <span className="left-span">
             {Intl.NumberFormat("pt-BR", {
@@ -60,14 +54,14 @@ const FinishOrder = () => {
       </div>
       <div className="info-block">
         <div className="subtitle">SABOR:</div>
-        <div className="size-span">
+        <div className="content-span">
           <span>- {flavor}</span>
-          <span className="left-span">R$ 0.00</span>
+          <span className="left-span">R$ 0,00</span>
         </div>
       </div>
       <div className="info-block">
         <div className="subtitle">PERSONALIZAÇÕES:</div>
-        <div className="size-span">
+        <div className="content-span">
           {customizations.map((item) => (
             <li key={item.name}>
               <span>- {item.name}</span>

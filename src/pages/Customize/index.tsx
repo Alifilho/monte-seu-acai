@@ -96,7 +96,7 @@ const Customize = () => {
       <div className="options-block">
         <div className="item-block">
           <div className="subtitle">PERSONALIZAÇÃO:</div>
-          <div className="buttons">
+          <div className="content">
             <button
               className={
                 selectedItems.includes("Granola")

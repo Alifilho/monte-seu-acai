@@ -45,7 +45,7 @@ const Home = () => {
       <div className="options-block">
         <div className="item-block">
           <div className="subtitle">SABOR:</div>
-          <div className="buttons">
+          <div className="content">
             <button
               className={
                 flavor === "Morango" ? "selected" : "unselected-button"
@@ -71,7 +71,7 @@ const Home = () => {
 
         <div className="item-block">
           <div className="subtitle">TAMANHO:</div>
-          <div className="buttons">
+          <div className="content">
             <button
               className={
                 size === "Pequeno (300ml)" ? "selected" : "unselected-button"
