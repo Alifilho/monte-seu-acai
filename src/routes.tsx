@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Customize from "./pages/Customize";
 import FinishOrder from "./pages/FinishOrder";
 
+//Routes configuration component
 const Routes = () => {
   return (
     <BrowserRouter>
