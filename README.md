@@ -30,6 +30,7 @@ To run the project locally follow these steps and it will be working :)
 ### Prerequisites
 
 * Yarn
+
 Instal yarn [here](https://classic.yarnpkg.com/en/docs/install/)
 
 ### Installation
