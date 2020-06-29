@@ -38,53 +38,69 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h2>Escolha seu açaí</h2>
-      <div className="opt-block">
-        <div className="flavor-block">
-          <h4>SABOR:</h4>
-          <button
-            className={flavor === "Morango" ? "selected" : ""}
-            onClick={() => handleSelectFlavor("Morango")}
-          >
-            Morango
-          </button>
-          <button
-            className={flavor === "Banana" ? "selected" : ""}
-            onClick={() => handleSelectFlavor("Banana")}
-          >
-            Banana
-          </button>
-          <button
-            className={flavor === "Kiwi" ? "selected" : ""}
-            onClick={() => handleSelectFlavor("kiwi")}
-          >
-            Kiwi
-          </button>
+      <div className="title">Escolha seu açaí</div>
+      <div className="options-block">
+        <div className="item-block">
+          <div className="subtitle">SABOR:</div>
+          <div className="buttons">
+            <button
+              className={
+                flavor === "Morango" ? "selected" : "unselected-button"
+              }
+              onClick={() => handleSelectFlavor("Morango")}
+            >
+              Morango
+            </button>
+            <button
+              className={flavor === "Banana" ? "selected" : "unselected-button"}
+              onClick={() => handleSelectFlavor("Banana")}
+            >
+              Banana
+            </button>
+            <button
+              className={flavor === "Kiwi" ? "selected" : "unselected-button"}
+              onClick={() => handleSelectFlavor("Kiwi")}
+            >
+              Kiwi
+            </button>
+          </div>
         </div>
 
-        <div className="size-block">
-          <h4>TAMANHO:</h4>
-          <button
-            className={size === "Pequeno (300ml)" ? "selected" : ""}
-            onClick={() => handleSelectSize("Pequeno (300ml)")}
-          >
-            Pequeno (300ml)
-          </button>
-          <button
-            className={size === "Médio (500ml)" ? "selected" : ""}
-            onClick={() => handleSelectSize("Médio (500ml)")}
-          >
-            Médio (500ml)
-          </button>
-          <button
-            className={size === "Grande (700ml)" ? "selected" : ""}
-            onClick={() => handleSelectSize("Grande (700ml)")}
-          >
-            Grande (700ml)
-          </button>
+        <div className="item-block">
+          <div className="subtitle">TAMANHO:</div>
+          <div className="buttons">
+            <button
+              className={
+                size === "Pequeno (300ml)" ? "selected" : "unselected-button"
+              }
+              onClick={() => handleSelectSize("Pequeno (300ml)")}
+            >
+              Pequeno (300ml)
+            </button>
+            <button
+              className={
+                size === "Médio (500ml)" ? "selected" : "unselected-button"
+              }
+              onClick={() => handleSelectSize("Médio (500ml)")}
+            >
+              Médio (500ml)
+            </button>
+            <button
+              className={
+                size === "Grande (700ml)" ? "selected" : "unselected-button"
+              }
+              onClick={() => handleSelectSize("Grande (700ml)")}
+            >
+              Grande (700ml)
+            </button>
+          </div>
         </div>
       </div>
-      <button onClick={handleSubmit}>Avançar</button>
+      <div className="footer-block">
+        <button className="end-button" onClick={handleSubmit}>
+          Avançar
+        </button>
+      </div>
     </div>
   );
 };

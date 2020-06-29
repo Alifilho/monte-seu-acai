@@ -98,31 +98,49 @@ const Customize = () => {
 
   return (
     <div className="home">
-      <h2>Personalize seu açaí</h2>
-      <div className="opt-block">
-        <div className="flavor-block">
-          <h4>PERSONALIZAÇÃO:</h4>
-          <button
-            className={selectedItems.includes("Granola") ? "selected" : ""}
-            onClick={() => handleChooseCustomizations("Granola")}
-          >
-            Granola
-          </button>
-          <button
-            className={selectedItems.includes("Paçoca") ? "selected" : ""}
-            onClick={() => handleChooseCustomizations("Paçoca")}
-          >
-            Paçoca
-          </button>
-          <button
-            className={selectedItems.includes("Leite ninho") ? "selected" : ""}
-            onClick={() => handleChooseCustomizations("Leite ninho")}
-          >
-            Leite ninho
-          </button>
+      <div className="title">Personalize seu açaí</div>
+      <div className="options-block">
+        <div className="item-block">
+          <div className="subtitle">PERSONALIZAÇÃO:</div>
+          <div className="buttons">
+            <button
+              className={
+                selectedItems.includes("Granola")
+                  ? "selected"
+                  : "unselected-button"
+              }
+              onClick={() => handleChooseCustomizations("Granola")}
+            >
+              Granola
+            </button>
+            <button
+              className={
+                selectedItems.includes("Paçoca")
+                  ? "selected"
+                  : "unselected-button"
+              }
+              onClick={() => handleChooseCustomizations("Paçoca")}
+            >
+              Paçoca
+            </button>
+            <button
+              className={
+                selectedItems.includes("Leite ninho")
+                  ? "selected"
+                  : "unselected-button"
+              }
+              onClick={() => handleChooseCustomizations("Leite ninho")}
+            >
+              Leite ninho
+            </button>
+          </div>
         </div>
       </div>
-      <button onClick={handleSubmit}>Finalizar pedido</button>
+      <div className="footer-block">
+        <button className="end-button" onClick={handleSubmit}>
+          Finalizar pedido
+        </button>
+      </div>
     </div>
   );
 };

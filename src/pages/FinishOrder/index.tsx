@@ -3,6 +3,8 @@ import { useLocation, useHistory, Link } from "react-router-dom";
 
 import { IHistoryParams, ICustomizations } from "../Customize";
 
+import "./styles.css";
+
 const FinishOrder = () => {
   const [flavor, setFlavor] = useState("");
   const [size, setSize] = useState("");
@@ -39,41 +41,43 @@ const FinishOrder = () => {
 
   return (
     <div className="home">
-      <h2>Resumo do pedido</h2>
+      <div className="title">Resumo do pedido</div>
 
-      <div className="size-info">
-        <h4>TAMANHO:</h4>
-        <div className="size-p">
-          <p>-{size}</p>
-          <p>R$ {sizeCost}</p>
+      <div className="info-block">
+        <div className="subtitle">TAMANHO:</div>
+        <div className="size-span">
+          <span>- {size}</span>
+          <span className="left-span">R$ {sizeCost}</span>
         </div>
       </div>
-      <div className="flavor-info">
-        <h4>SABOR:</h4>
-        <div className="flavor-p">
-          <p>-{flavor}</p>
-          <p>R$ 0.00</p>
+      <div className="info-block">
+        <div className="subtitle">SABOR:</div>
+        <div className="size-span">
+          <span>- {flavor}</span>
+          <span className="left-span">R$ 0.00</span>
         </div>
       </div>
-      <div className="customizations-info">
-        <h4>PERSONALIZAÇÕES:</h4>
-        <div className="customizations-p">
-          <ul>
-            {customizations.map((item) => (
-              <li key={item.name}>
-                <p>- {item.name}</p>
-                <p>R$: {item.value}</p>
-              </li>
-            ))}
-          </ul>
+      <div className="info-block">
+        <div className="subtitle">PERSONALIZAÇÕES:</div>
+        <div className="size-span">
+          {customizations.map((item) => (
+            <li key={item.name}>
+              <span>- {item.name}</span>
+              <span className="left-span">R$: {item.value}</span>
+            </li>
+          ))}
+        </div>
+        <div className="final-info">
+          <div>Valor total: R$ {finalValue}</div>
+          <div>Tempo de preparo: {waitTime}min</div>
         </div>
       </div>
 
-      <div className="final-info">
-        <p>Valor total: R$ {finalValue}</p>
-        <p>Tempo de preparo: {waitTime}min</p>
+      <div className="footer-block">
+        <Link className="end-button" to="/">
+          Refazer pedido
+        </Link>
       </div>
-      <Link to="/">Refazer pedido</Link>
     </div>
   );
 };
