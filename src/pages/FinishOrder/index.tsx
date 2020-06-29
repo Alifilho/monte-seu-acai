@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 
+//Importing interfaces
 import Customizations from "../../@types/customizations";
 import HistoryParams from "../../@types/historyParams";
 
@@ -17,12 +18,14 @@ const FinishOrder = () => {
   const history = useHistory();
   const location = useLocation<HistoryParams>();
 
+  //checks if the order data has been entered in the Location and sends it to Home if not
   useEffect(() => {
     if (location.state === undefined) {
       return history.push("/");
     }
   });
 
+  //add the order data to component state
   useEffect(() => {
     setFlavor(location.state.flavor);
     setSize(location.state.size);

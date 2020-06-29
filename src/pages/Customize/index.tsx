@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
+//Importing interfaces
 import Customizations from "../../@types/customizations";
 import HistoryParams from "../../@types/historyParams";
 
@@ -12,12 +13,14 @@ const Customize = () => {
   const location = useLocation<HistoryParams>();
   const history = useHistory();
 
+  //checks if the order data has been entered in the Location and sends it to Home if not
   useEffect(() => {
     if (location.state === undefined) {
       history.push("/");
     }
   });
 
+  //select or deselect customization when clicked
   function handleChooseCustomizations(ingredient: string) {
     const alreadySelected = selectedItems.findIndex(
       (item) => item === ingredient
@@ -31,11 +34,13 @@ const Customize = () => {
     }
   }
 
+  //sends the order data to the next component
   function handleSubmit() {
     let waitTime = 0;
     let sizeCost = 0;
     let finalValue = 0;
 
+    //checks the selected customizations and creates an array with each customization and its cost and adds the customization values ​​to the final order value
     let auxArray: Customizations[] = [];
     selectedItems.forEach((item) => {
       if (item === "Granola") {
@@ -52,6 +57,7 @@ const Customize = () => {
       }
     });
 
+    //checks the order size and adds the size value to the final value
     switch (location.state.size) {
       case "Pequeno (300ml)":
         sizeCost = 10;
