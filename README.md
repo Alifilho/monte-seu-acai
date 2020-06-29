@@ -10,7 +10,7 @@
 
 ## About The Project
 
-![Home](https://github.com/images/home.png)
+![Home](https://raw.githubusercontent.com/Alifilho/monte-seu-acai/master/images/home.png)
 
 [monte-seu-acai](https://monte-seu-acai.herokuapp.com/) clone project for a test, the project is a management system for an açaí store.
 
