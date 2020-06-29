@@ -1,12 +1,13 @@
 ## Monte seu Açaí
 
+
+
 ## Table of Contents
 
 * [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
 * [Usage](#usage)
 * [Contact](#contact)
-
 
 ## About The Project
 
@@ -46,8 +47,17 @@ yarn start
 
 ## Usage
 
-to-do
+1. Choose the desired flavor and size and move on to the next
 
+![select-flavor-size](https://raw.githubusercontent.com/Alifilho/monte-seu-acai/master/images/select-flavor-size.png)
+
+2. Select the desired customizations and proceed
+
+![customizations](https://raw.githubusercontent.com/Alifilho/monte-seu-acai/master/images/customizations.png)
+
+3. See the waiting time and order values
+
+![finish-order](https://raw.githubusercontent.com/Alifilho/monte-seu-acai/master/images/finish-order.png)
 
 ## Contact
 
