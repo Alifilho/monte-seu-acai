@@ -59,7 +59,7 @@ const FinishOrder = () => {
         <div className="subtitle">SABOR:</div>
         <div className="size-span">
           <span>- {flavor}</span>
-          <span className="left-span">R$ 0,00</span>
+          <span className="left-span">R$ 0.00</span>
         </div>
       </div>
       <div className="info-block">
@@ -79,7 +79,7 @@ const FinishOrder = () => {
         </div>
         <div className="final-info">
           <div>
-            Valor total:
+            Valor total:{" "}
             {Intl.NumberFormat("pt-BR", {
               style: "currency",
               currency: "BRL",
