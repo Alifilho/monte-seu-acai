@@ -70,7 +70,7 @@ const Customize = () => {
         waitTime = 7;
         break;
       case "Grande (700ml)":
-        sizeCost = 12;
+        sizeCost = 15;
         finalValue += sizeCost;
         waitTime = 9;
         break;
