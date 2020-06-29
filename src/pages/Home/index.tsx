@@ -9,6 +9,7 @@ const Home = () => {
 
   const history = useHistory();
 
+  //checks if the flavor is already selected and selects if it was not before
   function handleSelectFlavor(selectedFlavor: string) {
     if (selectedFlavor === flavor) {
       setFlavor("");
@@ -17,6 +18,7 @@ const Home = () => {
     }
   }
 
+  //checks if the size is already selected and selects if it was not before
   function handleSelectSize(selectedSize: string) {
     if (size === selectedSize) {
       setSize("");
@@ -25,6 +27,7 @@ const Home = () => {
     }
   }
 
+  //checks if a flavor and size have been selected and sends for customization if yes
   function handleSubmit() {
     if (flavor === "" || size === "") {
       return alert("É necessário selecionar um sabor e um tamanho!");
