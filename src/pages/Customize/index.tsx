@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
+//Importing interfaces
 import Customizations from "../../@types/customizations";
 import HistoryParams from "../../@types/historyParams";
 
