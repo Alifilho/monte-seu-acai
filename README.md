@@ -14,7 +14,7 @@
 
 ## About The Project
 
-![Home](https://github.com/Alifilho/monte-seu-acai/tree/master/images)
+![Home](https://github.com/images/yaktocat.png)
 
 [monte-seu-acai](https://monte-seu-acai.herokuapp.com/) clone project for a test, the project is a management system for an açaí store.
 
